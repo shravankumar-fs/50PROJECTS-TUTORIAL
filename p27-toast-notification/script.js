@@ -7,16 +7,22 @@ const messages = [
   "Message Three",
   "Message Four",
 ];
-
-let count = -1;
-
+const types = ["info", "success", "error"];
 button.addEventListener("click", () => {
-  count = count > messages.length - 2 ? 0 : count + 1;
   const toast = document.createElement("div");
   toast.classList.add("toast");
-  toast.innerHTML = messages[count];
+  toast.classList.add(getRandomType());
+
+  toast.innerText = getRandomMessage();
   toasts.appendChild(toast);
   setTimeout(() => {
     toast.remove();
   }, 2000);
 });
+function getRandomMessage() {
+  return messages[Math.floor(Math.random() * messages.length)];
+}
+
+function getRandomType() {
+  return types[Math.floor(Math.random() * types.length)];
+}
