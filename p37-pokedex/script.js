@@ -20,6 +20,7 @@ const colors = {
   ice: "#a9eff3",
   steel: "steelblue",
   ghost: "rebeccapurple",
+  dark: "black",
 };
 
 const fetchPokemons = async () => {
