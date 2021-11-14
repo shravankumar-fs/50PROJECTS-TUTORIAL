@@ -26,6 +26,9 @@ h1 {
   transition: transform 1s ease-in-out;
   box-shadow: 1px 1px 3px -3px black;
 }
+h1:hover {
+  animation: move 0.3s ease-in-out;
+}
 .poke-container {
   display: flex;
   flex-wrap: wrap;
@@ -43,7 +46,8 @@ h1 {
   text-align: center;
   width: 180px;
   z-index: -4;
-  position: relative;
+  position: static;
+  cursor: pointer;
 }
 .pokemon::before {
   position: absolute;
@@ -68,6 +72,57 @@ h1 {
     0.4
   );
   z-index: -1;
+}
+.pokemon:hover {
+  animation: move 0.3s ease-in-out;
+}
+@keyframes move {
+  0% {
+    transform: rotateZ(0deg);
+    background: linear-gradient(
+      -45deg,
+      steelblue 40%,
+      white 45%,
+      steelblue 50%
+    );
+  }
+  25% {
+    transform: rotateZ(5deg);
+    background: linear-gradient(
+      -45deg,
+      steelblue 45%,
+      white 50%,
+      steelblue 55%
+    );
+  }
+
+  50% {
+    transform: rotateZ(0deg);
+    background: linear-gradient(
+      -45deg,
+      steelblue 50%,
+      white 55%,
+      steelblue 60%
+    );
+  }
+  75% {
+    transform: rotateZ(-5deg);
+    background: linear-gradient(
+      -45deg,
+      steelblue 55%,
+      white 60%,
+      steelblue 65%
+    );
+  }
+  100% {
+    transform: rotateZ(0deg);
+    background: linear-gradient(
+      -45deg,
+      steelblue 60%,
+      white 65%,
+      steelblue 70%
+    );
+  }
 }
 .pokemon .img-container {
   background-image: linear-gradient(
