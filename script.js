@@ -98,6 +98,7 @@ const blade = document.getElementById("blade");
 const heading = document.getElementById("heading");
 const saberButton = document.getElementById("lightbutton");
 const description = document.getElementById("description");
+const starwars = document.querySelector(".star-wars");
 
 let clicked = false;
 saberButton.addEventListener("click", () => {
@@ -106,17 +107,20 @@ saberButton.addEventListener("click", () => {
     audio.play();
     blade.classList.remove("hidden");
     heading.classList.remove("animateHeading");
+    starwars.classList.remove("hide");
     let fs = heading.style.fontSize;
     heading.style.fontSize = "18px";
     saberButton.style.setProperty("--bt-color", "greenyellow");
     saberButton.style.setProperty("--bt-bx-shadow", "var(--bt-bx-shadow1)");
     description.style.background =
       "linear-gradient(to right,black 15%,rgb(11, 11, 59) 35%, rgb(11, 11, 59) 65%,black 90%)";
+
     setTimeout(() => {
       audio.pause();
       audio.currentTime = 0;
       blade.classList.add("hidden");
       heading.classList.add("animateHeading");
+      starwars.classList.add("hide");
       heading.style.fontSize = fs;
       clicked = false;
       saberButton.style.setProperty("--bt-bx-shadow", "none");

@@ -2,6 +2,7 @@
 body {
   margin: 0;
   font-style: "Mulish", sans-serif;
+  background-color: black;
 }
 * {
   box-sizing: border-box;
@@ -9,12 +10,27 @@ body {
   align-items: left;
   font-style: "Mulish", sans-serif;
 }
-
+.star-wars {
+  display: block;
+  background: url("https://media1.giphy.com/media/64DfqXzPanb3OnktBS/giphy.gif?cid=ecf05e47trr4slvz0kmv1fqvef7khwioalpf02shusopkq2h&rid=giphy.gif&ct=s")
+    no-repeat;
+  background-size: contain;
+  height: 300px;
+  width: 300px;
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 0.4;
+}
+.star-wars.hide {
+  display: none;
+}
 .container {
   width: 100vw;
   min-height: 100vh;
   height: fit-content;
-  background: black;
+  background: transparent;
   display: flex;
   flex-direction: column;
   padding: 20px;
