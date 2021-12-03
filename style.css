@@ -1,0 +1,337 @@
+@import url("https://fonts.googleapis.com/css2?family=Mulish&family=Roboto:wght@500&display=swap");
+body {
+  margin: 0;
+  font-style: "Mulish", sans-serif;
+}
+* {
+  box-sizing: border-box;
+  letter-spacing: 1px;
+  align-items: left;
+  font-style: "Mulish", sans-serif;
+}
+
+.container {
+  width: 100vw;
+  min-height: 100vh;
+  height: fit-content;
+  background: black;
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  color: whitesmoke;
+}
+h1 {
+  position: relative;
+  width: 700px;
+  height: 60px;
+  align-self: center;
+}
+h1 .heading {
+  color: red;
+  text-align: center;
+  letter-spacing: 1px;
+  font-size: 22px;
+  font-weight: 700;
+  width: 600px;
+  text-transform: capitalize;
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translate(0, -50%);
+  margin: 0 0 20px 0;
+  z-index: 2;
+  transition: all 0.3s linear;
+}
+h1 .heading.animateHeading {
+  text-shadow: 0px 1px 2px rgba(0, 0, 255, 1), 0px -1px 2px rgba(0, 0, 255, 1),
+    0px 20px 10px rgba(0, 0, 100, 0.3), 0px -20px 10px rgba(0, 0, 100, 0.3);
+  animation: glow 4s infinite ease-in;
+}
+@keyframes glow {
+  0% {
+    text-shadow: 0px 1px 2px rgba(0, 0, 255, 1), 0px -1px 2px rgba(0, 0, 255, 1),
+      0px 20px 10px rgba(0, 0, 100, 0.9), 0px -20px 10px rgba(0, 0, 100, 0.9);
+  }
+  2% {
+    text-shadow: none;
+  }
+  4% {
+    text-shadow: 0px 1px 2px rgba(0, 0, 255, 1), 0px -1px 2px rgba(0, 0, 255, 1),
+      0px 20px 10px rgba(0, 0, 100, 0.9), 0px -20px 10px rgba(0, 0, 100, 0.9);
+  }
+  10% {
+    text-shadow: none;
+  }
+  12% {
+    text-shadow: 0px 1px 2px rgba(0, 0, 255, 1), 0px -1px 2px rgba(0, 0, 255, 1),
+      0px 20px 10px rgba(0, 0, 100, 0.9), 0px -20px 10px rgba(0, 0, 100, 0.9);
+  }
+  100% {
+    text-shadow: 0px 1px 2px rgba(0, 0, 255, 1), 0px -1px 2px rgba(0, 0, 255, 1),
+      0px 20px 10px rgba(0, 0, 100, 0.9), 0px -20px 10px rgba(0, 0, 100, 0.9);
+  }
+}
+.saber {
+  position: absolute;
+  left: 30px;
+  height: inherit;
+  width: 700px;
+  z-index: 1;
+}
+.saber button {
+  background: linear-gradient(
+    to right,
+    blue 0%,
+    rgb(34, 172, 226) 20%,
+    rgb(100, 100, 255) 21%,
+    rgb(34, 172, 226) 22%,
+    rgb(100, 100, 255) 23%,
+    rgb(34, 172, 226) 24%,
+    black 25%,
+    rgb(34, 172, 226) 26%,
+    rgb(100, 100, 255) 27%,
+    rgb(34, 172, 226) 28%,
+    rgb(100, 100, 255) 29%,
+    rgb(34, 172, 226) 30%,
+    black 32%,
+    midnightblue 33%,
+    rgba(0, 0, 0, 0.3) 65%,
+    midnightblue 90%
+  );
+  height: 30px;
+  width: 80px;
+  border: none;
+  border-radius: 10px;
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+  --bt-color: radial-gradient(black, darkred);
+  --bt-bx-shadow: none;
+  --bt-bx-shadow1: 0px 0px 4px 6px rgb(164, 245, 43, 0.3);
+  cursor: pointer;
+  position: relative;
+  opacity: 0.4;
+  z-index: 1;
+  transition: transform 0.6s ease;
+}
+.saber button:hover {
+  opacity: 1;
+}
+
+.saber button:active {
+  transform: scale(0.8);
+}
+.saber button::before {
+  content: "";
+  position: absolute;
+  height: 10px;
+  width: 18px;
+  border-radius: 10px;
+  background: var(--bt-color);
+  box-shadow: var(--bt-bx-shadow);
+  top: 50%;
+  left: 70%;
+  transform: translate(-50%, -50%);
+}
+.saber button::after {
+  content: "";
+  position: absolute;
+  height: 60px;
+  width: 5px;
+  background: linear-gradient(skyblue, black, midnightblue, black, skyblue);
+  right: 10px;
+  border-radius: 50%;
+  left: 90%;
+  top: -15px;
+  opacity: 1;
+  z-index: -1;
+}
+
+.saber .blade {
+  display: block;
+  height: 26px;
+  width: 600px;
+  background-color: lavender;
+  z-index: 1;
+  border-bottom-right-radius: 50px;
+  border-top-right-radius: 50px;
+  position: absolute;
+  left: 80px;
+  top: 14px;
+  box-shadow: 5px 0px 10px 5px rgba(255, 50, 50, 0.9),
+    5px 10px 10px 5px rgba(255, 50, 50, 0.5),
+    5px -10px 10px 5px rgba(255, 50, 50, 0.5),
+    13px 13px 0px 13px rgba(255, 50, 50, 0.05),
+    13px -13px 0px 13px rgba(255, 50, 50, 0.05);
+  animation: blade 0.2s ease;
+}
+.saber .blade.hidden {
+  display: none;
+}
+@keyframes blade {
+  from {
+    width: 0px;
+  }
+  to {
+    width: 600px;
+  }
+}
+.description {
+  font-size: 14px;
+  padding: 5px 20px;
+  border-radius: 30px;
+  border-top-left-radius: 0;
+  border-bottom-right-radius: 0;
+  position: relative;
+  box-shadow: 0px 0px 10px rgba(100, 100, 255, 0.2);
+}
+.description::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: rgba(100, 100, 255, 0.2);
+  height: 100%;
+  width: 5px;
+  border-radius: 10px 0;
+}
+.description::after {
+  content: "";
+  position: absolute;
+  top: calc(inherit + 10px);
+  left: 0;
+  background-color: rgba(100, 100, 255, 0.2);
+  height: 5px;
+  width: 100%;
+  border-radius: 10px 0;
+}
+.description h3 em {
+  color: yellow;
+}
+
+.projects {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 30px 0px;
+}
+.project {
+  margin: 10px 15px 20px 0px;
+  padding: 10px 20px;
+  border-radius: 10px;
+  box-shadow: 0px 0px 6px 1px rgba(100, 100, 255, 0.2);
+  position: relative;
+  text-align: left;
+  width: 290px;
+}
+
+.project:hover {
+  background: rgba(100, 100, 255, 0.2);
+  animation: shake 0.3s linear;
+}
+.project::before {
+  content: "";
+  position: absolute;
+  height: 35px;
+  top: 0px;
+  left: 0px;
+  border: 5px rgba(100, 100, 255, 0.2) solid;
+  border-radius: 10px 0px;
+  border-right: 0;
+  z-index: 1;
+}
+.project::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  top: 40px;
+  left: 0px;
+  border: 5px rgba(50, 50, 255, 0.1) solid;
+  border-radius: 10px 0px;
+  border-left: 0;
+  border-right: 0;
+  z-index: 1;
+}
+
+@keyframes shake {
+  0% {
+    transform: rotateZ(0deg);
+    background: linear-gradient(
+      -45deg,
+      rgba(0, 0, 255, 0.2) 40%,
+      white 45%,
+      rgba(0, 0, 255, 0.2) 50%
+    );
+  }
+  25% {
+    transform: rotateZ(2deg);
+    background: linear-gradient(
+      -45deg,
+      rgba(0, 0, 255, 0.2) 45%,
+      white 50%,
+      rgba(0, 0, 255, 0.2) 55%
+    );
+  }
+
+  50% {
+    transform: rotateZ(0deg);
+    background: linear-gradient(
+      -45deg,
+      rgba(0, 0, 255, 0.2) 50%,
+      white 55%,
+      rgba(0, 0, 255, 0.2) 60%
+    );
+  }
+  75% {
+    transform: rotateZ(-2deg);
+    background: linear-gradient(
+      -45deg,
+      rgba(0, 0, 255, 0.2) 55%,
+      white 60%,
+      rgba(0, 0, 255, 0.2) 65%
+    );
+  }
+  100% {
+    transform: rotateZ(0deg);
+    background: linear-gradient(
+      -45deg,
+      rgba(0, 0, 255, 0.2) 60%,
+      white 65%,
+      rgba(0, 0, 255, 0.2) 70%
+    );
+  }
+}
+.project .num {
+  color: yellow;
+  font-size: 10px;
+}
+.project .num::after {
+  content: ".";
+}
+.project a {
+  text-transform: capitalize;
+  text-decoration: none;
+  color: white;
+  font-size: 16px;
+}
+@media (max-width: 700px) {
+  .saber {
+    display: none;
+  }
+  h1 {
+    width: inherit;
+    box-shadow: none;
+    animation: none;
+  }
+  h1 .heading {
+    width: inherit;
+    position: relative;
+    font-size: 20px;
+    box-shadow: none;
+    animation: none;
+    text-align: center;
+    margin: 10px;
+  }
+  h1 .heading.animateHeading {
+    box-shadow: none;
+    animation: none;
+  }
+}
