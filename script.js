@@ -132,3 +132,15 @@ saberButton.addEventListener("click", () => {
     }, 2000);
   }
 });
+
+document.body.addEventListener("mousemove", (e) => {
+  document.body
+    .querySelectorAll(".customCursor")
+    .forEach((item) => item.remove());
+  let cursor = document.createElement("div");
+  cursor.style.top = e.pageY + "px";
+  cursor.style.left = e.pageX + "px";
+  cursor.classList.add("customCursor");
+  document.body.appendChild(cursor);
+  cursor.style.animation = "cursorfade 1s ease-out infinite";
+});

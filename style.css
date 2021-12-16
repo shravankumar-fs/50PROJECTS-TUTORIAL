@@ -2,13 +2,21 @@
 body {
   margin: 0;
   font-style: "Mulish", sans-serif;
-  background-color: black;
+  background: linear-gradient(
+    56deg,
+    black,
+    black,
+    rgba(0, 0, 20, 0.9),
+    black,
+    black
+  );
 }
 * {
   box-sizing: border-box;
   letter-spacing: 1px;
   align-items: left;
   font-style: "Mulish", sans-serif;
+  cursor: none;
 }
 .star-wars {
   display: block;
@@ -123,13 +131,28 @@ h1 .heading.animateHeading {
   --bt-color: radial-gradient(black, darkred);
   --bt-bx-shadow: none;
   --bt-bx-shadow1: 0px 0px 4px 6px rgb(164, 245, 43, 0.3);
-  cursor: pointer;
   position: relative;
   opacity: 0.4;
   z-index: 1;
   transition: transform 0.6s ease;
 }
 .saber button:hover {
+  background: linear-gradient(
+    to right,
+    blue 0%,
+    rgb(34, 172, 226) 20%,
+    rgb(100, 100, 255) 21%,
+    rgb(34, 172, 226) 22%,
+    rgb(100, 100, 255) 23%,
+    rgb(34, 172, 226) 24%,
+    black 25%,
+    rgb(34, 172, 226) 26%,
+    rgb(100, 100, 255) 27%,
+    rgb(34, 172, 226) 28%,
+    rgb(100, 100, 255) 29%,
+    rgb(34, 172, 226) 30%,
+    blue 90%
+  );
   opacity: 1;
 }
 
@@ -164,7 +187,7 @@ h1 .heading.animateHeading {
 
 .saber .blade {
   display: block;
-  height: 26px;
+  height: 28px;
   width: 600px;
   background-color: lavender;
   z-index: 1;
@@ -172,7 +195,7 @@ h1 .heading.animateHeading {
   border-top-right-radius: 50px;
   position: absolute;
   left: 80px;
-  top: 14px;
+  top: 16px;
   box-shadow: 5px 0px 10px 5px rgba(255, 50, 50, 0.9),
     5px 10px 10px 5px rgba(255, 50, 50, 0.5),
     5px -10px 10px 5px rgba(255, 50, 50, 0.5),
@@ -228,28 +251,29 @@ h1 .heading.animateHeading {
   display: flex;
   flex-wrap: wrap;
   margin: 30px 0px;
+  gap: 40px;
 }
 .project {
-  margin: 10px 15px 20px 0px;
   padding: 10px 20px;
   border-radius: 10px;
   box-shadow: 0px 0px 6px 1px rgba(100, 100, 255, 0.2);
   position: relative;
   text-align: left;
-  width: 290px;
+  width: 280px;
 }
 
 .project:hover {
-  background: rgba(100, 100, 255, 0.2);
+  background: rgba(100, 100, 255, 0.3);
   animation: shake 0.3s linear;
 }
+
 .project::before {
   content: "";
   position: absolute;
   height: 35px;
   top: 0px;
   left: 0px;
-  border: 5px rgba(100, 100, 255, 0.2) solid;
+  border: 5px rgba(100, 100, 255, 0.4) solid;
   border-radius: 10px 0px;
   border-right: 0;
   z-index: 1;
@@ -260,7 +284,7 @@ h1 .heading.animateHeading {
   width: 100%;
   top: 40px;
   left: 0px;
-  border: 5px rgba(50, 50, 255, 0.1) solid;
+  border: 5px rgba(50, 50, 255, 0.3) solid;
   border-radius: 10px 0px;
   border-left: 0;
   border-right: 0;
@@ -349,5 +373,26 @@ h1 .heading.animateHeading {
   h1 .heading.animateHeading {
     box-shadow: none;
     animation: none;
+  }
+}
+.customCursor {
+  background: radial-gradient(rgba(0, 0, 255, 0.8) 60%, whitesmoke);
+  box-shadow: 0 0 10px 1px rgba(200, 200, 255, 0.3);
+  perspective: 500px;
+  transform: rotate3D(45deg);
+  height: 20px;
+  width: 30px;
+  border-radius: 50%;
+  border-top-left-radius: 0;
+  z-index: 100;
+  position: absolute;
+}
+@keyframes cursorfade {
+  0%,
+  70% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0.5;
   }
 }
