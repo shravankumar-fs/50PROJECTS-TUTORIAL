@@ -29,7 +29,7 @@ body {
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
-  opacity: 0.4;
+  opacity: 0.3;
 }
 .star-wars.hide {
   display: none;
@@ -238,7 +238,7 @@ h1 .heading.animateHeading {
   position: absolute;
   top: calc(inherit + 10px);
   left: 0;
-  background-color: rgba(100, 100, 255, 0.2);
+  background-color: rgba(100, 100, 255, 0.1);
   height: 5px;
   width: 100%;
   border-radius: 10px 0;
@@ -376,16 +376,18 @@ h1 .heading.animateHeading {
   }
 }
 .customCursor {
-  background: radial-gradient(rgba(0, 0, 255, 0.8) 60%, whitesmoke);
+  background: radial-gradient(rgb(0, 0, 255) 60%, whitesmoke);
   box-shadow: 0 0 10px 1px rgba(200, 200, 255, 0.3);
-  perspective: 500px;
-  transform: rotate3D(45deg);
   height: 20px;
   width: 30px;
-  border-radius: 50%;
-  border-top-left-radius: 0;
   z-index: 100;
   position: absolute;
+  border-radius: 50%;
+  border-top-left-radius: 0;
+  border: 5px solid skyblue;
+  border-top-width: 0;
+  border-left-width: 0;
+  border-right-color: midnightblue;
 }
 @keyframes cursorfade {
   0%,

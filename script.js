@@ -99,6 +99,7 @@ const heading = document.getElementById("heading");
 const saberButton = document.getElementById("lightbutton");
 const description = document.getElementById("description");
 const starwars = document.querySelector(".star-wars");
+const projectEls = document.querySelectorAll(".project");
 
 let clicked = false;
 saberButton.addEventListener("click", () => {
