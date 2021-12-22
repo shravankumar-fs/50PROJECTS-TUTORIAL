@@ -75,7 +75,7 @@ projectList.forEach((pr) => {
   row.classList.add("project");
   row.innerHTML = `
   <div class="prHeading">
-    <span class="num">${pr.id}</span>&nbsp;&nbsp;<span><a href="${pr.link}" target="_blank">${pr.name}</a></span>
+  <a href="${pr.link}" target="_blank"><span class="num">${pr.id}</span>&nbsp;&nbsp;<span class="proName">${pr.name}</span></a>
   </div>`;
   row.addEventListener("mouseenter", () => {
     click.play();
@@ -93,55 +93,15 @@ projectList.forEach((pr) => {
   });
   document.getElementById("projects").appendChild(row);
 });
-const audio = document.getElementById("light");
-const blade = document.getElementById("blade");
-const heading = document.getElementById("heading");
-const saberButton = document.getElementById("lightbutton");
-const description = document.getElementById("description");
-const starwars = document.querySelector(".star-wars");
-const projectEls = document.querySelectorAll(".project");
 
-let clicked = false;
-saberButton.addEventListener("click", () => {
-  if (!clicked) {
-    clicked = true;
-    audio.play();
-    blade.classList.remove("hidden");
-    heading.classList.remove("animateHeading");
-    starwars.classList.remove("hide");
-    let fs = heading.style.fontSize;
-    heading.style.fontSize = "18px";
-    saberButton.style.setProperty("--bt-color", "greenyellow");
-    saberButton.style.setProperty("--bt-bx-shadow", "var(--bt-bx-shadow1)");
-    description.style.background =
-      "linear-gradient(to right,black 15%,rgb(11, 11, 59) 35%, rgb(11, 11, 59) 65%,black 90%)";
-
-    setTimeout(() => {
-      audio.pause();
-      audio.currentTime = 0;
-      blade.classList.add("hidden");
-      heading.classList.add("animateHeading");
-      starwars.classList.add("hide");
-      heading.style.fontSize = fs;
-      clicked = false;
-      saberButton.style.setProperty("--bt-bx-shadow", "none");
-      saberButton.style.setProperty(
-        "--bt-color",
-        "radial-gradient(black,darkred)"
-      );
-      description.style.background = "transparent";
-    }, 2000);
-  }
-});
-
-document.body.addEventListener("mousemove", (e) => {
-  document.body
-    .querySelectorAll(".customCursor")
-    .forEach((item) => item.remove());
-  let cursor = document.createElement("div");
-  cursor.style.top = e.pageY + "px";
-  cursor.style.left = e.pageX + "px";
-  cursor.classList.add("customCursor");
-  document.body.appendChild(cursor);
-  cursor.style.animation = "cursorfade 1s ease-out infinite";
-});
+// document.body.addEventListener("mousemove", (e) => {
+//   document.body
+//     .querySelectorAll(".customCursor")
+//     .forEach((item) => item.remove());
+//   let cursor = document.createElement("div");
+//   cursor.style.top = e.pageY + "px";
+//   cursor.style.left = e.pageX + "px";
+//   cursor.classList.add("customCursor");
+//   document.body.appendChild(cursor);
+//   cursor.style.animation = "cursorfade 1s ease-out infinite";
+// });
